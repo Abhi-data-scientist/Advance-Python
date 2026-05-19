@@ -23,8 +23,14 @@
   <div class="form-wrap">
     <h2>Login</h2>
 
-    {% if message %}
+    {% if message == 'Registration successfull. Kindly login to proceed' %}
         <p style="background: #dcfce7; color: #16a34a; padding: 10px; border-radius: 8px; font-size: 13px; text-align: center; margin-bottom: 1rem;">
+            {{message}}
+        </p>
+    {% endif %}
+
+    {% if message=='Invalid email or password' %}
+        <p style="background: #fee2e2; color: #dc2626; padding: 10px; border-radius: 8px; font-size: 13px; text-align: center; margin-bottom: 1rem;">
             {{message}}
         </p>
     {% endif %}

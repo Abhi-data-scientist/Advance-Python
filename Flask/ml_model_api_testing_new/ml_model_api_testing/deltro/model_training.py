@@ -1,7 +1,7 @@
 import numpy as np 
 import pandas as pd 
 
-df =pd.read_csv("Social_Network_Ads.csv")
+df =pd.read_csv("ml_model_api_testing_new\ml_model_api_testing\deltro\Social_Network_Ads.csv")
 # print(df.head(2)) 
 
 df = df.drop(columns = ['User ID' , 'Gender'])

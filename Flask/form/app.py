@@ -2,8 +2,9 @@
 # It is use for Web development 
 # It is mostly use for integreting our ml models 
 # render_template html file ko load krke customer ko dikhata hai 
+# jinja technique ke through html me python code likh skte hai 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from db import create_table, register_user, search
 
 create_table()
@@ -38,10 +39,12 @@ def perform_login():
     
     result = search(email, password)
     if result==1:
-        return 'Login successful'
+        return redirect('/profile')
     else:
-        return 'Invalid email or password'
-        # return render_template('login.html', message='Invalid email or password')
+        return render_template('login.html', message='Invalid email or password')
 
+@app.route('/profile')
+def profile():
+    return 'Profile page '
 
 app.run(debug=True)
